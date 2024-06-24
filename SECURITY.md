@@ -33,7 +33,7 @@ You must ideally do all the testing locally. See the following links:
 
 - API: https://github.com/opencollective/opencollective-api
 - Frontend: https://github.com/opencollective/opencollective-frontend
-- Invoices: https://github.com/opencollective/opencollective-invoices
+- PDF: https://github.com/opencollective/opencollective-pdf
 - Rest: https://github.com/opencollective/opencollective-rest
 - Images: https://github.com/opencollective/opencollective-images
 
@@ -41,7 +41,7 @@ In case you really need to test on a live environment, we provide staging server
 
 - API: https://api-staging.opencollective.com
 - Frontend: https://staging.opencollective.com
-- Invoices: https://invoices-staging.opencollective.com
+- PDF: https://pdf-staging.opencollective.com
 - Rest: https://rest-staging.opencollective.com
 - Images: https://images-staging.opencollective.com
 
@@ -99,11 +99,13 @@ wf+ESlENix2p4LJ8BZLU/D/eaEugQL8LXW+KZVDXyCMwlCA4
 
 | Project       | Type            | Security requirement | Low  | Medium | High  | Critical |
 | ------------- | --------------- | -------------------- | ---- | ------ | ----- | -------- |
-| API           | API             | +++                  | \$50 | \$100  | \$200 | \$500    |
-| Frontend      | Web Application | +++                  | \$50 | \$100  | \$200 | \$500    |
-| Invoices      | API             | ++                   | \$25 | \$50   | \$100 | \$250    |
-| Images        | API             | ++                   | \$25 | \$50   | \$100 | \$250    |
-| REST          | API             | ++                   | \$15 | \$30   | \$75  | \$150    |
+| API           | API             | +++                  | \$120 | \$300  | \$600 | \$1200    |
+| Frontend      | Web Application | +++                  | \$120 | \$300  | \$600 | \$1200    |
+| PDF service   | API             | ++                   | \$60 | \$150   | \$300 | \$600    |
+| Images        | API             | ++                   | \$60 | \$150   | \$300 | \$600    |
+| REST          | API             | ++                   | \$60 | \$150   | \$300  | \$600    |
+
+Note: we are not able to pay bounties to people based in countries sanctioned by the United States, or countries where US sanctions are so widespread that our payment processors no longer serve them.
 
 ## Qualifying vulnerabilities
 
@@ -167,16 +169,9 @@ wf+ESlENix2p4LJ8BZLU/D/eaEugQL8LXW+KZVDXyCMwlCA4
 
 Our analysis is always based on worst case exploitation of the vulnerability, as is the reward we pay. We will rely on CVSS3 as well as internal criteria to score the vulnerabilities.
 
-CVSS3 score:
-
-- From 1 to 4 ==> Low
-- From 4 to 7 ==> Medium
-- From 7 to 9 ==> High
-- From 9 to 10 ==> Critical
-
 Things that we take into account to adjust the score for vulnerabilities:
 
 - Everything related to authentication
-- Allow to take control or leak information about payment methods
+- Allow to take control or leak information about payment methods or connected accounts
 - Compromise the integrity or historicity of our transactions ledger
 - Compromise the permission system
